@@ -11,7 +11,63 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150309213448) do
+ActiveRecord::Schema.define(version: 20150309223259) do
+
+  create_table "categories", force: true do |t|
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", force: true do |t|
+    t.text     "body"
+    t.integer  "user_id"
+    t.integer  "step_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "comments", ["step_id"], name: "index_comments_on_step_id"
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "priorities", force: true do |t|
+    t.integer  "urgency"
+    t.string   "color"
+    t.integer  "todo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "priorities", ["todo_id"], name: "index_priorities_on_todo_id"
+
+  create_table "steps", force: true do |t|
+    t.boolean  "completed"
+    t.datetime "completed_at"
+    t.integer  "order"
+    t.datetime "deadline"
+    t.string   "name"
+    t.integer  "user_id"
+    t.integer  "todo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "steps", ["todo_id"], name: "index_steps_on_todo_id"
+  add_index "steps", ["user_id"], name: "index_steps_on_user_id"
+
+  create_table "todos", force: true do |t|
+    t.boolean  "completed"
+    t.datetime "completed_at"
+    t.string   "title"
+    t.text     "description"
+    t.integer  "category_id"
+    t.datetime "deadline"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+  end
+
+  add_index "todos", ["user_id"], name: "index_todos_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

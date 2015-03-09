@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+  get 'comments/new'
+
+  get 'comments/edit'
+
+  get 'steps/new'
+
+  get 'steps/edit'
+
+  get 'steps/show'
+
+  get 'todos/new'
+
+  get 'todos/edit'
+
+  get 'todos/show'
+
+  get 'categories/index'
+
+  get 'categories/new'
+
+  get 'categories/edit'
+
+  get 'categories/show'
+
   devise_for :users
   root to: 'category#index'
 
