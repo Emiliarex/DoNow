@@ -8,21 +8,29 @@ class CategoriesController < ApplicationController
   end
   
   def create
-    @category = Category.new (category-params)
+    @category = Category.new(category_params)
     if @category.save
       flash[:notice] = "You just made a new category!"
       redirect_to categories_path
     else
       flash[:error] = "Uh-Oh! Your category could not be saved!"
       redirect_to :back
+    end
   end
 
   def edit
-    @category = Category.find (params [:id]) 
+    @category = Category.find(params[:id]) 
   end
 
   def show
-    @categories = Category.find (params [:id])
-    @todos = @categories.todos.order("deadline ASC")
+    @category = Category.find(params[:id])
+    @todos = @category.todos.order("deadline ASC")
   end
+
+private
+
+def category_params
+  params.require(:category).permit(:title)
+end
+  
 end

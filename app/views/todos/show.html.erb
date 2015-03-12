@@ -1,2 +1,16 @@
-<h1>Todos#show</h1>
-<p>Find me in app/views/todos/show.html.erb</p>
+<h1><%= @todo.title %></h1>
+<hr>
+
+<div class="row">
+  <%= link_to "Edit To-Do", edit_category_todo_path(@category, @todo), class: 'btn btn-warning btn-lg edit_button_todo' %>
+</div>
+
+<h4>Description: <%= @todo.description %></h4>
+<hr class="todo_show">
+
+<h4>Steps</h4>
+<hr class="todo_show">
+<% @steps.each do |s| %>
+<p><%= s.name %></p>
+  <% end %>
+

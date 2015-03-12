@@ -1,2 +1,46 @@
-<h1>Todos#edit</h1>
-<p>Find me in app/views/todos/edit.html.erb</p>
+<h1>Edit Your To-Do</h1>
+<div class="col-md-8">
+  <%= form_for [@category, @todo] do |f| %>
+  <div class="col-md-12">
+  <div class="col-md-4">
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control', placeholder: "Put Name of To-Do Here" %>
+  </div>
+  </div>
+  <div class="col-md-9">
+  <div class="form-group">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control', placeholder: "Explain What Needs to be Done" %>
+  </div>
+  </div>
+  </div>
+  
+  
+  <div class="col-md-12">
+    <div class="col-md-6">
+    <%= f.label :steps %>
+    </div>
+  
+
+    <%= f.fields_for :steps do |s| %>
+    <div class="col-md-7">
+      
+       <div class="form-group">
+        <%= s.text_field :name, class: 'form-control', placeholder: "List the Steps Involved for this To-Do" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+     
+
+    </br>
+  
+<div class="col-md-12">
+<div class="form-group">
+  <%= f.submit "Edit", class: 'btn btn-warning' %>
+</div>
+</div>
+  
+  <% end %>
+</div>

@@ -1,0 +1,328 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Playfair+Display:900italic); 
+@import url(http://fonts.googleapis.com/css?family=Architects+Daughter);
+@import url(http://fonts.googleapis.com/css?family=Coming+Soon);
+@import url(https://fonts.googleapis.com/css?family=Permanent+Marker);
+
+
+
+body{
+ // background: url(flower.jpg);
+  padding-top: 70px;
+  background-color: #E5F2C4;
+  
+}
+h1{
+  font-family: Playfair Display;
+  font-style: italic;
+  text-decoration: underline;
+   text-shadow: -2px 2px #8C8285;
+}
+.main_title{
+  color: #F2A0B2;
+   font-style: italic;
+  //font-size: 35px;
+  font-family: Permanent Marker;
+  text-decoration: none;
+  font-size:4em;
+  text-shadow:-6px 8px rgba(255,255,255,1);
+  
+}
+ 
+
+
+h4{
+  font-family: Coming Soon;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 20px;
+  text-decoration: underline;
+ 
+}
+hr {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #BABABA;
+}
+
+.todo_show{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 0;
+  border-top: 1px solid #E5F2C4;
+  
+}
+.btn{
+  font-family: Lobster;
+  font-style: oblique;
+  text-shadow: -2px 2px #0A0103;
+   transform-style: flat;
+  transition: all 250ms ease-out;
+  box-shadow: 0 15px 10px -10px rgba(31, 31, 0, 0.5);
+  margin-top:10px;
+  
+  &:before,
+  &:after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+    	transition: all 250ms ease-out;
+    
+  border-color: #dedede;
+  }
+    &:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    border: 1px solid #fff;
+    margin-top:0px;
+  }
+    
+    
+}
+
+.nav-tabs {
+
+  border: none;
+}
+
+.create_button_todo{
+  
+  position: absolute;
+  margin-left:700px;
+  margin-bottom:70px;
+  font-size: 25px;
+    
+  &:before,
+  &:after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+    	transition: all 250ms ease-out;
+     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(128, 128, 128, 0.1) inset;
+  border-color: #dedede;
+  }
+    &:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    border: 1px solid #fff;
+  }
+    
+    &:before {
+			box-shadow: 0 15px 10px -10px rgba(31, 31, 0, 0.5);
+    }
+  
+}
+  
+    
+
+
+.create_button_category{
+  
+  position: absolute;
+  margin-left:700px;
+  margin-bottom:70px;
+  font-size: 25px;
+    
+  &:before,
+  &:after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+    	transition: all 250ms ease-out;
+    
+  border-color: #dedede;
+  }
+    &:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    border: 1px solid #fff;
+  }
+    
+   
+  
+}
+  
+
+
+.delete_button_category{
+  position: absolute;
+  margin-left: 900px;
+  margin-bottom:10px;
+  font-size: 20px;
+  border-style: dotted;
+  border-width: 5px;
+  border-color: #E5F2C4;
+    
+  &:before,
+  &:after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+    	transition: all 250ms ease-out;
+  border-color: #dedede;
+  }
+    &:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    border: 1px solid #fff;
+  }
+    
+  
+}
+  
+
+
+
+.edit_button_todo{
+  
+  position: absolute;
+  margin-left:700px;
+  margin-bottom:70px;  
+  font-size: 25px;
+    
+  &:before,
+  &:after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+    	transition: all 250ms ease-out;
+    
+  border-color: #dedede;
+  }
+    &:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    border: 1px solid #fff;
+  }
+    
+   
+  
+}
+
+
+.save_button_newtodo{
+  font-size: 20px;
+    
+  &:before,
+  &:after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+    	transition: all 250ms ease-out;
+  
+  border-color: #dedede;
+  }
+    &:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    border: 1px solid #fff;
+  }
+    
+}
+  
+
+
+
+.category_title_link{
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: Architects Daughter;
+  font-weight: bold;
+ 
+}
+
+.edit_button_category{
+ font-size: 15px;
+  letter-spacing: 1px;
+    
+  &:before,
+  &:after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+    	transition: all 250ms ease-out;
+  
+  border-color: #dedede;
+  }
+    &:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    border: 1px solid #fff;
+  }
+    
+  
+  
+}
+
+.delete_button_todo{
+  font-size: 15px;
+  letter-spacing: 1px;
+    
+  &:before,
+  &:after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+    	transition: all 250ms ease-out;
+  border-color: #dedede;
+  }
+    &:before {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &:hover {
+    border: 1px solid #fff;
+  }
+    
+    
+}
+.todo_title_link{
+   text-transform: uppercase;
+  font-size: 18px;
+  font-family: Architects Daughter;
+  font-weight: bold;
+}
+
+.nav{
+  font-family: Lobster;
+  font-size: 20px;
+}
+
+
+//---------------------------------Delete Button------------------------------------------------//
+
+
+

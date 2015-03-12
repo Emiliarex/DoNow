@@ -3,28 +3,16 @@ Rails.application.routes.draw do
 
   get 'comments/edit'
 
-  get 'steps/new'
 
-  get 'steps/edit'
-
-  get 'steps/show'
-
-  get 'todos/new'
-
-  get 'todos/edit'
-
-  get 'todos/show'
-
-  get 'categories/index'
-
-  get 'categories/new'
-
-  get 'categories/edit'
-
-  get 'categories/show'
-
+ resources :categories do
+    resources :todos, except: [:index] do
+      resources :steps, except: [:index]
+    end
+  end
+  
+  
   devise_for :users
-  root to: 'category#index'
+  root to: 'categories#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

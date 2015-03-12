@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="icon" type="image/png" href="/assets/favicon.ico">
+
+
   <title>DoNow</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
+  <div class="container-fluid">
+  <div class="row-fluid">
+    <div class="col-md-2">
+      <ul class="nav nav-tabs nav-stacked">
+        
+         <% if current_user %>
+          <%= image_tag(current_user.avatar.tiny.url) if current_user.avatar? %>
+        Hello <%= link_to (current_user.name || current_user.email), current_user %>!
+        <%= link_to edit_user_registration_path, class: 'btn btn-success btn-xs' do %>
+          <i class='fa fa-user'></i> User Profile
+        <% end %>
+        
+        <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-success btn-xs' do %>
+            <i class='fa fa-sign-out'></i> Sign Out
+          <% end %>
+        <% else %>
+        <%= link_to "Sign In", new_user_session_path %> or
+        <%= link_to "Sign Up", new_user_registration_path %>
+        <% end %>
+        
+        <hr>
+        
+        <li><%= link_to "<i class='fa fa-home'></i> Home".html_safe, root_path %></li>
+        <li><%= link_to "<i class='fa fa-exclamation-triangle'></i> Urgent To-Dos".html_safe, root_path %></li>
+        <li><%= link_to "<i class='fa fa-spinner''></i>To-Dos in Progress".html_safe, root_path %><li>
+         
+  
+      </ul>
+        
+      
+    </div>
+    <div class="col-md-8 col-md-offset-2">
+      <h1 class="main_title">~ DoNow ~ </h1>
+      <h6 class="main_title" style="font-size:40px;">  Get Things Done Fun and Fast! </h6>
+      <%= yield %>
+    </div>
+  </div>
+</div>
 
-<%= yield %>
-
+ ~ </div>
 </body>
 </html>
+~
