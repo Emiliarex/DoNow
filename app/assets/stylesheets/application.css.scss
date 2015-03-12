@@ -10,7 +10,6 @@
 
 body{
  // background: url(flower.jpg);
-  padding-top: 70px;
   background-color: #E5F2C4;
   
 }
@@ -47,6 +46,82 @@ hr {
   border: 0;
   border-top: 1px solid #BABABA;
 }
+
+.container-fluid{
+  padding-left:0px ;
+}
+
+/*CONTENT STYLES*/
+
+#content_wrapper{
+  padding-top:70px;
+}
+/*end CONTENT STYLES*/
+
+/*NAV STYLES*/
+
+#nav_wrapper{
+  padding-top:40px;
+  background-color:#959C96;
+  box-shadow:0px 0px 10px rgba(0, 0, 0, 0.5);
+  min-height:100vh;
+  height:100vh;
+}
+#nav_wrapper h1{
+    text-align: center;
+    color: #F2A0B2;
+    padding-right: 10%;
+    font-size: 50px;
+  text-decoration:none;
+  font-family: Permanent Marker;
+  text-shadow: -2px 2px #fff;
+  
+}
+.nav-tabs {
+
+  border: none;
+}
+
+.nav-tabs li{
+  text-align:right;
+}
+.nav-tabs a {
+  width:100%;
+  display:block;
+      &:after{
+        display: inline-block;
+        height: 40px;
+        float: right;
+        position: absolute;
+        width: 0px;
+        right: 0px;
+        background-color: #e0a0a0;
+        transition: all 0.15s ease-in-out;
+        content: " ";
+        z-index: 150;
+      }
+      &:hover:after{
+        width: 100%;
+      }
+}
+.nav-tabs span{
+        position: relative;
+        z-index: 2000;
+        padding-right: 10px;
+        width:100%;
+  
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+  text-decoration: none;
+  background-color: transparent;
+  border:none;
+}
+
+.nav a{
+  color: #fff;
+}
+/*end NAV STYLES*/
 
 .todo_show{
   margin-top: 20px;
@@ -87,10 +162,6 @@ hr {
     
 }
 
-.nav-tabs {
-
-  border: none;
-}
 
 .create_button_todo{
   
