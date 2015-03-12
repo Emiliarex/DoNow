@@ -16,6 +16,7 @@
   <div class="row-fluid">
     <div id="nav_wrapper" class="col-md-2">
       <h1> DoNow </h1>
+      
       <ul class="nav nav-tabs nav-stacked">
         
          
@@ -28,7 +29,7 @@
   
    
         
-       
+     
   <% if current_user %>
           <%= image_tag(current_user.avatar.tiny.url) if current_user.avatar? %>
         Hello <%= link_to (current_user.name || current_user.email), current_user %>!
@@ -43,12 +44,14 @@
         <%= link_to "Sign In", new_user_session_path %> 
         <%= link_to "Sign Up", new_user_registration_path %>
         <% end %>
+        
       </ul>
    
     </div>
     <div id="content_wrapper" class="col-md-8 col-md-offset-2">
       <h1 class="main_title">~ DoNow ~ </h1>
       <h6 class="main_title" style="font-size:40px;">  Get Things Done Fun and Fast! </h6>
+      
       <%= yield %>
     </div>
   </div>

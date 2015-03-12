@@ -5,10 +5,10 @@
   <%= link_to "Edit To-Do", edit_category_todo_path(@category, @todo), class: 'btn btn-warning btn-lg edit_button_todo' %>
 </div>
 
-<h4>Description: <%= @todo.description %></h4>
+<h4> <%= @todo.description %></h4>
 <hr class="todo_show">
 
-<h4>Steps</h4>
+<h4>Steps:</h4>
 <hr class="todo_show">
 <% @steps.each do |s| %>
 <p><%= s.name %></p>
