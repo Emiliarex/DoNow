@@ -15,6 +15,7 @@ class UsersController < ApplicationController
       flash[:error] = "Oh no! Something is invalid in the form! Please try again!"
       redirect_to new_user_path
      end
+  end
   
   def edit
   end
