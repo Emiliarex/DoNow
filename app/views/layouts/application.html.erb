@@ -26,12 +26,11 @@
         <li><%= link_to "<span><i class='fa fa-home'></i> Home</span>".html_safe, root_path %></li>
         <li><%= link_to "<span><i class='fa fa-exclamation-triangle'></i> Urgent To-Dos</span>".html_safe, root_path %></li>
         <li><%= link_to "<span><i class='fa fa-spinner''></i>To-Dos in Progress</span>".html_safe, root_path %><li>
-  
-   
         
      
+       
   <% if current_user %>
-          <%= image_tag(current_user.avatar.tiny.url) if current_user.avatar? %>
+          <%#= image_tag(current_user.avatar.tiny.url) if current_user.avatar? %>
         Hello <%= link_to (current_user.name || current_user.email), current_user %>!
         <%= link_to edit_user_registration_path, class: 'btn btn-success btn-xs' do %>
           <i class='fa fa-user'></i> User Profile
