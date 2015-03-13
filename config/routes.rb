@@ -1,12 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/index'
-
-  get 'users/new'
-
-  get 'users/edit'
-
-  get 'users/show'
-
   get 'comments/new'
 
   get 'comments/edit'
@@ -20,6 +12,7 @@ Rails.application.routes.draw do
   
   
   devise_for :users
+    resources :users, only: [:update, :show, :index]
   root to: 'categories#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
