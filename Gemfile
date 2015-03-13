@@ -19,6 +19,11 @@ gem 'devise'
 
 gem 'figaro', '1.0'
 
+gem 'carrierwave'
+gem 'mini_magick', '~> 3.5.0'
+
+gem'fog'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 gem 'bootstrap-sass'

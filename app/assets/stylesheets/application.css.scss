@@ -88,7 +88,7 @@ a {
 .nav-tabs li{
   text-align:right;
 }
-.nav-tabs a {
+.nav-tabs a:not(.no_bar) {
   width:100%;
   display:block;
       &:after{
@@ -121,10 +121,27 @@ a {
   border:none;
 }
 
-.nav a{
+.nav a:not(.name_text){
   color: #fff;
 }
 
+.user_button {
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-family: architects daughter;
+}
+
+.greeting_text {
+  color: #fff;
+  font-family: architects daughter;
+}
+.name_text{
+  font-family: playfair display;
+  color: #FF5EC4;
+  letter-spacing: 1px;
+  font-style: italic;
+ 
+}
 
 /*end NAV STYLES*/
 

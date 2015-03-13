@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   has_many :todos
   has_many :steps
   has_many :comments
+  
+  mount_uploader :avatar, AvatarUploader
 end

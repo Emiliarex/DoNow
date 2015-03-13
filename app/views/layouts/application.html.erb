@@ -27,25 +27,27 @@
         <li><%= link_to "<span><i class='fa fa-exclamation-triangle'></i> Urgent To-Dos</span>".html_safe, root_path %></li>
         <li><%= link_to "<span><i class='fa fa-spinner''></i>To-Dos in Progress</span>".html_safe, root_path %><li>
         
-     
-       
-  <% if current_user %>
-          <%#= image_tag(current_user.avatar.tiny.url) if current_user.avatar? %>
-        Hello <%= link_to (current_user.name || current_user.email), current_user %>!
-        <%= link_to edit_user_registration_path, class: 'btn btn-success btn-xs' do %>
-          <i class='fa fa-user'></i> User Profile
+        <br/>
+        
+          <% if current_user %>
+          <%= image_tag(current_user.avatar.tiny.url) if current_user.avatar? %>
+        <p class="greeting_text">Why Hello There, <strong><%=link_to (current_user.name || current_user.email), current_user, class: "no_bar name_text " %></strong></p>
+        <%= link_to edit_user_registration_path, class: 'no_bar user_button' do %>
+          <i class='fa fa-user'></i> My Account
         <% end %>
         
-        <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-success btn-xs' do %>
+        <%= link_to destroy_user_session_path, method: :delete, class: 'no_bar user_button' do %>
             <i class='fa fa-sign-out'></i> Sign Out
           <% end %>
         <% else %>
-        <%= link_to "Sign In", new_user_session_path %> 
-        <%= link_to "Sign Up", new_user_registration_path %>
+        <%= link_to "Sign In", new_user_session_path, class: "no_bar" %> 
+        <%= link_to "Sign Up", new_user_registration_path, class: "no_bar" %>
         <% end %>
-        
-      </ul>
-       <% if flash[:notice] %>
+     
+        </ul>
+       
+      
+      <% if flash[:notice] %>
     <div class="alert alert-success">
       <button type="button" class="close" data-dismiss="alert">&times;</button>
       <%= flash[:notice] %>
@@ -66,6 +68,8 @@
     <div id="content_wrapper" class="col-md-8 col-md-offset-2">
       <h1 class="main_title">~ DoNow ~ </h1>
       <h6 class="main_title" style="font-size:40px;">  Get Things Done Fun and Fast! </h6>
+
+  
       
       <%= yield %>
     </div>
