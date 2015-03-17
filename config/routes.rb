@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'priorities/new'
+
   get 'comments/new'
 
   get 'comments/edit'
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
  resources :categories do
     resources :todos, except: [:index] do
       resources :steps, except: [:index]
+      resources :priorities
     end
   end
   

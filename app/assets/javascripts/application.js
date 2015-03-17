@@ -16,5 +16,16 @@
 //= require bootstrap
 //= require_tree .
 
+$(function(){
 
-//--------------------------------------Delete Button----------------------------------------------------//
+$(".details_wrapper .details_close").click(function(){
+             $(this).closest(".details_wrapper").find(".details_container").slideToggle();
+     });
+  
+  
+  
+  
+  
+  
+  
+});

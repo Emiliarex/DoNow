@@ -12,8 +12,12 @@
 <hr class="todo_show">
 <% @steps.each do |s| %>
 <p><%= s.name %></p>
-<small>
-  submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %><br/>
-</small>
   <% end %>
 
+<div class="details_wrapper">
+<h4>Priority <i class="fa fa-times-circle details_close"></i></h4>
+
+<div class="details_container">
+  <%= render partial: "todos/priority" %>
+</div>
+</div>

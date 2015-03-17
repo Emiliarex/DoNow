@@ -25,6 +25,18 @@ end
     @category = Category.find(params[:category_id])
     @todo = Todo.find(params[:id])
   end
+  
+  def update
+    @category = Category.find(params[:category_id])
+    @todo = Todo.find(params[:id])
+    if @todo.update_attributes(todo_params)
+      redirect_to edit_category_todo_path(@category, @todo)
+    else
+      flash[:error] = "Error saving topic. Please try again."
+      render :edit
+    end
+  end
+  
 
   def show
     @category = Category.find(params[:category_id])
@@ -32,6 +44,20 @@ end
     @steps = @todo.steps.order("order_number ASC")
   end
 
+  def destroy
+    @category = Category.find(params[:category_id])
+    @todo = Todo.find(params[:id])
+    title = @todo.title
+    if @todo.destroy
+      flash[:notice] = "\"#{title}\" was deleted successfully."
+      redirect_to category_path(@category)
+    else
+      flash[:error] = "There was an error deleting the topic."
+      render :show
+    end 
+    
+  end
+  
 private
 
 def todo_params
