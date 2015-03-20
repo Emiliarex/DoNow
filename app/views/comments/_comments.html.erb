@@ -1,0 +1,12 @@
+<%= content_tag :div, class: 'media', id: "comment-#{comment.id}" do %>
+  <%= link_to '#', class: 'pull-left' do %>
+  <%= image_tag(comment.user.avatar.small.url) if (comment.user.present? && comment.user.avatar?) %>
+  <% end %>
+  <div class="media-body">
+    <small>
+      <%= comment.user.name if (comment.user.present?) %> commented <%= time_ago_in_words(comment.created_at) if comment.created_at.present? %> ago
+      <%= link_to "Delete Comment", [category, todo, step, comment], method: :delete, remote: true %>
+    </small>
+    <p><%= comment.body %></p>
+  </div>
+<% end %>

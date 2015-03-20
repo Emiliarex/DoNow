@@ -1,23 +1,80 @@
-<h1><%= @todo.title %></h1>
-<hr>
+<div class="box_wrapper">
+                <div class="box_header">
+                <h1><%= @todo.title %></h1>
+                  </div>
 
-<div class="row">
-  <%= link_to "Edit To-Do", edit_category_todo_path(@category, @todo), class: 'btn btn-warning btn-lg edit_button_todo' %>
+
+                  <div class="col-md-7 box_content">
+
+                    <div class="box_content_label">
+                      <h2> <strong> Description:</strong></h2>
+                    </div>
+                    
+                    <div class="box_content_element">
+                  <h4>  <%= @todo.description %></h4>
+                    </div>
+
+                    <div class="box_content_label">
+                  <h2>Steps:</h2>
+                    </div>
+                  <% @steps.each do |s| %>
+                    <div class="box_content_element">
+                        
+                          <div class="details_wrapper">
+                          <h4><%= s.name %> <i class="fa fa-arrow-circle-down details_close"></i></h4>
+
+                          <div class="details_container auto_hide">
+                            Write your Questions and Comments here!
+                            <h2>Comments</h2>
+                           <div class='new-comment'>
+                  <%= render partial: "comments/form", locals: {todo: @todo, category: @category, step: s} %>
+                         </div>
+                              <div class='js-comments'>
+                              
+                            <% s.comments.each do |c| %>
+                                <div class="comment_element">
+    
+                            <%= render partial: "comments/comments", locals: {comment: c, step: s, todo: @todo, category: @category} %>
+                                </div>
+                             <% end %>
+                                
+                              </div>
+                                
+                            
+
+      
+
+                        </div>
+                          </div>
+                          </div>
+                    <% end %>
+                          </div>
+
+
+
+                <div class="col-md-5 box_sidebar">
+                  <div class="box_sidebar_element">
+                <%= link_to "Edit To-Do", edit_category_todo_path(@category, @todo), class: 'btn btn-warning btn-lg edit_button_todo' %>
+                  </div>
+                  <div class="box_sidebar_element">
+                    <%= link_to "All Categories", edit_category_todo_path(@category, @todo) %>
+                  </div>
+                  <div class="box_sidebar_element">
+                    <h5> info: something </h5>
+                    <h5> more: bananas </h5>
+                    <h5> phone: 51246887231 </h5>
+                  </div>
+                  <div class="box_sidebar_element">
+                  <div class="details_wrapper">
+                  <h4>Priority <i class="fa fa-plus details_close"></i></h4>
+
+                  <div class="details_container auto_hide">
+                    <%= render partial: "todos/priority" %>
+                  </div>
+                  </div>
+                  </div>
+                </div>
+      </div>
+</div>   
 </div>
-
-<h4> <%= @todo.description %></h4>
-<hr class="todo_show">
-
-<h4>Steps:</h4>
-<hr class="todo_show">
-<% @steps.each do |s| %>
-<p><%= s.name %></p>
-  <% end %>
-
-<div class="details_wrapper">
-<h4>Priority <i class="fa fa-times-circle details_close"></i></h4>
-
-<div class="details_container">
-  <%= render partial: "todos/priority" %>
-</div>
-</div>
+        

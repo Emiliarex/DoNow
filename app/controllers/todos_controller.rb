@@ -42,6 +42,7 @@ end
     @category = Category.find(params[:category_id])
     @todo = Todo.find(params[:id])
     @steps = @todo.steps.order("order_number ASC")
+    @comments = Comment.all
   end
 
   def destroy
