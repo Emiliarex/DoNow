@@ -1,5 +1,5 @@
  <% if @comment.valid? %>
-$('.js-comments').prepend("<%= escape_javascript(render partial: "comments/comments", locals: { category: @category, todo: @todo, step: @step, comment: @comment}) %>");
+$('.js-comments-<%= @comment.step.id %>').prepend("<%= escape_javascript(render partial: "comments/comments", locals: { category: @category, todo: @todo, step: @step, comment: @comment}) %>");
 $('.new-comment').html("<%= escape_javascript(render partial: 'comments/form', locals: { step: @comment.step, comment: @new_comment, todo: @todo, category: @category }) %>");
  <% else %>
 $('.new-comment').html("<%= escape_javascript(render partial: 'comments/form', locals: { step: @step, comment: @comment }) %>");

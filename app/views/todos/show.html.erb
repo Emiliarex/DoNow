@@ -1,10 +1,8 @@
 <div class="box_wrapper">
-                <div class="box_header">
-                <h1><%= @todo.title %></h1>
-                  </div>
 
 
                   <div class="col-md-7 box_content">
+                <h1><%= @todo.title %></h1>
 
                     <div class="box_content_label">
                       <h2> <strong> Description:</strong></h2>
@@ -29,7 +27,7 @@
                            <div class='new-comment'>
                   <%= render partial: "comments/form", locals: {todo: @todo, category: @category, step: s} %>
                          </div>
-                              <div class='js-comments'>
+                              <div class='js-comments-<%=s.id%>'>
                               
                             <% s.comments.each do |c| %>
                                 <div class="comment_element">
@@ -69,7 +67,9 @@
                   <h4>Priority <i class="fa fa-plus details_close"></i></h4>
 
                   <div class="details_container auto_hide">
+                
                     <%= render partial: "todos/priority" %>
+                    
                   </div>
                   </div>
                   </div>

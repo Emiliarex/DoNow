@@ -43,7 +43,7 @@ hr {
   margin-top: 20px;
   margin-bottom: 20px;
   border: 0;
-  border-top: 1px solid #BABABA;
+  border-top: 1px solid #9A9C9A;
 }
 
 a {
@@ -186,9 +186,6 @@ a {
 
 .create_button_todo{
   
-  position: absolute;
-  margin-left:700px;
-  margin-bottom:70px;
   font-size: 25px;
     
   &:before,
@@ -221,9 +218,6 @@ a {
 
 .create_button_category{
   
-  position: absolute;
-  margin-left:700px;
-  margin-bottom:70px;
   font-size: 25px;
     
   &:before,
@@ -252,13 +246,10 @@ a {
 
 
 .delete_button_category{
-  position: absolute;
-  margin-left: 900px;
-  margin-bottom:10px;
   font-size: 20px;
   border-style: dotted;
   border-width: 5px;
-  border-color: #E5F2C4;
+  border-color: rgba(209,196,242,1);
     
   &:before,
   &:after {
@@ -437,7 +428,7 @@ a {
 .box_header{
   padding: 8px 0px 8px 32px;
   //border-bottom: 1px dotted rgba(0,0,0,0.5);
-  background-color: rgba(209,196,242,0.8);
+  background-color: rgba(209,196,242,0);
 }
 
 .box_content{
@@ -484,6 +475,7 @@ a {
   border:1px solid rgba(0,0,0,0.3);
   border-radius:12px;
   padding: 16px 32px;
+  overflow:auto;
 }
 
 .comment_element{
