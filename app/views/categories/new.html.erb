@@ -1,13 +1,18 @@
+<div class="box_wrapper">
+  <div class="box_header">
 <h1>Create a New Category</h1>
-
+  </div>
 <div class="col-md-4">
   <%= form_for @category do |f| %>
   <div class="form-group">
-  <%= f.label :title %>
+    <div class="box_content_label">
+      <h2><%= f.label :title %></h2>
+    </div>
   <%= f.text_field :title, class: 'form-control', placeholder: "Put Your Amazing Category Name Here" %>
     </br>
   <%= f.submit "Add Category", class: 'btn btn-success btn-lg' %>
   
   <%end %>
   </div>
+</div>
 </div>

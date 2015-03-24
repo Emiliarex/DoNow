@@ -436,8 +436,8 @@ a {
 
 .box_header{
   padding: 8px 0px 8px 32px;
-  border-bottom: 1px solid rgba(0,0,0,0.5);
-  background-color: #fff;
+  //border-bottom: 1px dotted rgba(0,0,0,0.5);
+  background-color: rgba(209,196,242,0.8);
 }
 
 .box_content{
@@ -447,15 +447,16 @@ a {
 }
 
 .box_content_label{
-  color:white;
-  font-weight:bold;
+  color: white;
+  font-weight: bold;
   text-shadow: -2px 2px 0 rgba(0,0,0,0.3);
-  letter-spacing:1px;
-  text-indent:60px;
+  letter-spacing: 1px;
+  //text-indent: 60px;
   font-family: Playfair Display;
   font-style: italic;
   text-decoration: underline;
 }
+
 
 .box_content_element{
   margin:10px auto;
