@@ -1,16 +1,17 @@
-<h1>Get things done and make another To-Do!</h1>
+<div class="box_wrapper">
 
-<hr>
-
-
-
-<div class="col-md-8">
+<div class="col-md-8 box_content">
+  <h1>Get things done and make another To-Do!</h1>
+  </br>
+  <div class="col-md-12 box_content_element">
   <%= form_for [@category, @todo] do |f| %>
   <div class="col-md-12">
   <div class="col-md-4">
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control', placeholder: "Put Name of To-Do Here" %>
+    <%= f.label :deadline %>
+    <%= f.date_field :deadline, class: 'form-control' %>
   </div>
   </div>
   <div class="col-md-9">
@@ -28,18 +29,34 @@
     </div>
   
 
-    <%= f.fields_for :steps do |s| %>
     <div class="col-md-7">
+    <%= f.fields_for :steps do |s| %>
       
        <div class="form-group">
         <%= s.text_field :name, class: 'form-control', placeholder: "List the Steps Involved for this To-Do" %>
       </div>
-    </div>
+
     <% end %>
   </div>
-     
+    
+        <div class="col-md-7">
+    <%= f.fields_for :priority do |p| %>
+      
+       <div class="form-group">
+         <%= p.hidden_field :todo_id, value: @todo.id %>
+         <%= p.label :urgency %>
+         <%= p.number_field :urgency,  min:1, max: 5, class: "form-control" %>
+      </div>
+    <% end %>
+  </div>
+    </div>
+     <div class="form-group">
+    <%= f.label :assign_user %>
+    <%= f.collection_select(:user_id, User.all, :id, :name, {:include_blank => "Choose a human!"}, {class: 'form-control'})%>
+  </div>
 
-    </br>
+        </div>
+  
   
 <div class="col-md-12">
 <div class="form-group">
@@ -49,5 +66,6 @@
   
   <% end %>
 </div>
+</div>
 
-  
+</div>

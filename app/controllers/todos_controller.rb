@@ -6,6 +6,7 @@ class TodosController < ApplicationController
     3.times do
       @steps = @todo.steps.build
     end
+    @priority = @todo.build_priority
   end
   
   def create
@@ -30,7 +31,8 @@ end
     @category = Category.find(params[:category_id])
     @todo = Todo.find(params[:id])
     if @todo.update_attributes(todo_params)
-      redirect_to edit_category_todo_path(@category, @todo)
+      flash[:notice] = "To-Do Updated!"
+      redirect_to category_todo_path(@category, @todo)
     else
       flash[:error] = "Error saving topic. Please try again."
       render :edit
@@ -62,7 +64,7 @@ end
 private
 
 def todo_params
-  params.require(:todo).permit(:title, :description, :category_id, :steps_attributes => [:name, :id])
+  params.require(:todo).permit(:title, :description, :deadline, :category_id, :user_id, :steps_attributes => [:name, :id], :priority_attributes => [:id, :urgency, :todo_id])
 end
   
 end

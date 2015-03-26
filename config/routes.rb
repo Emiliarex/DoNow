@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     resources :todos, except: [:index] do
         resources :priorities
       resources :steps, except: [:index] do
+        member do 
+          get 'complete'
+          put 'complete'
+        end
          resources :comments
       end
     end

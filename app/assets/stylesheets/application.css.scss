@@ -9,9 +9,9 @@
 
 
 body{
- // background: url(flower.jpg);
-  background-color: #E5F2C4;
-  
+/*  background-image: url("maxresdefault.jpg"); */
+/*  background-color: #5ee8d3; */
+ background: linear-gradient(45deg, rgba(122,226,255,1) 0%, rgba(36,204,255,1) 0%, rgba(255,255,255,1) 100%);
 }
 h1{
   font-family: Playfair Display;
@@ -20,13 +20,13 @@ h1{
    text-shadow: -2px 2px #8C8285;
 }
 .main_title{
-  color: #F2A0B2;
+  color: #e85e72;
    font-style: italic;
   //font-size: 35px;
   font-family: Permanent Marker;
   text-decoration: none;
   font-size:4em;
-  text-shadow:-6px 8px rgba(255,255,255,1);
+  text-shadow:-4px 4px rgba(255,255,255,1);
   padding-left:240px;
   
 }
@@ -416,13 +416,27 @@ a {
 //---------------------------------BOX STYLES--------------------------------//
 
 .box_wrapper{
-  border: 1px solid rgba(0,0,0,0.3);
-  border-radius: 4px;
+  border: 3px solid rgba(122,20,200,0.3);
+  border-left: 4px solid rgba(122,20,200,0.3);
+  border-bottom:  4px solid rgba(122,20,200,0.3);
+  border-radius: 20px;
   min-height: 600px;
   overflow:hidden;
   position:relative;
-  background-color: rgba(209,196,242,0.8);
-  box-shadow: -4px 4px 6px rgba(0,0,0,0.3);
+/*   background-color: rgba(209,196,242,0.8); */
+  background-color: rgba(184,156,227,1);
+  box-shadow: -8px 8px 10px rgba(0,0,0,0.7);
+}
+
+.outer {
+  display:block;
+  margin: 150px auto ;
+  max-width: 400px;
+  padding: 20px 0;
+  border: 1px solid #888;
+  border-width: 1px 0;
+  position: relative;
+  background: #fff;
 }
 
 .box_header{
@@ -459,7 +473,8 @@ a {
 
 .box_sidebar{
   padding: 0;
-  background-color: rgba(59,46,92,0.5);
+/*   background-color: rgba(59,46,92,0.5); */
+ background-color: rgba(209,196,242,0.8);
   border-left: 1px solid rgba(0,0,0,0.3);
   box-shadow: -4px 0 8px -1px rgba(0,0,0,0.4);
   margin-bottom:-5000px;
@@ -479,6 +494,15 @@ a {
 }
 
 .comment_element{
-   background-color: rgba(59,46,92,0.5);
+   background-color: rgba(184,156,227,0.4);
+  border-radius: 5px;
   
+}
+/*-----------------------------------ICON STYLES-------------------------*/
+.red_icon{
+  color: red;
+}
+
+.green_icon{
+  color: green;
 }

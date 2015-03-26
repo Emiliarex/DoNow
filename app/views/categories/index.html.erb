@@ -1,19 +1,28 @@
-
+<div class="box_wrapper">
+  <div class="col-md-7 box_content">
 <h1>Categories</h1> 
+  
 
-<p>Find the Category that you want!</p>
+<!-- <p>Find the Category that you want!</p> -->
 
-<hr>
-<div class="form-group">
-  <%= link_to "Add Category", new_category_path, class: 'btn btn-info btn-lg create_button_category' %> 
-</div>
-
-<div class="form-group">
+<div class="col-md-12 box_content_element">
+    <div class="form-group">
     <% @categories.each do |c| %>
     <%= link_to "Edit Category", edit_category_path(c), class: 'btn btn-warning btn-xs edit_button_category' %>
   <%= link_to  c.title, category_path(c), class: 'category_title_link' %>
-
-  
 </div>
 <% end %>
+    </div>
+  </div>
+    
+  <div class="col-md-5 box_sidebar">
+<div class="col-md-12 box_sidebar_element">
+  <div class="form-group">
+  <%= link_to "Add Category", new_category_path, class: 'btn btn-info btn-lg create_button_category' %> 
+  </div>
 </div>
+    </div>
+    
+
+</div>
+

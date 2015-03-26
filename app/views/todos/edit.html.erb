@@ -3,14 +3,17 @@
 <h1>Edit Your To-Do</h1>
   </div>
 <div class="col-md-8 box_content">
+  
   <%= form_for [@category, @todo] do |f| %>
-  <div class="col-md-12">
+  <div class="col-md-12 box_content_element">
   <div class="col-md-4">
   <div class="form-group"> 
      <div class= "box_content_label">
     <h2><%= f.label :title %></h2>
     </div>
     <%= f.text_field :title, class: 'form-control', placeholder: "Put Name of To-Do Here" %>
+     <%= f.label :deadline %>
+    <%= f.date_field :deadline, class: 'form-control' %>
   </div>
   </div>
   <div class="col-md-9">
@@ -24,7 +27,7 @@
   </div>
   
   
-  <div class="col-md-12">
+  <div class="col-md-12 box_content_element">
     <div class="col-md-6 box_content_label">
       <h2><%= f.label :steps %></h2>
     </div>
@@ -40,17 +43,21 @@
     <% end %>
   </div>
      
-
+  <div class="form-group">
+    <%= f.label :assign_user %>
+    <%= f.collection_select(:user_id, User.all, :id, :name, {:include_blank => "Choose a human!"}, {class: 'form-control'})%>
+  </div>
     </br>
   
 <div class="col-md-12">
 <div class="form-group">
-  <%= f.submit "Edit", class: 'btn btn-warning' %>
+  <%= f.submit "Edit", class: 'btn btn-warning btn-lg' %>
 </div>
 </div>
   
   
   <% end %>
+  </div>
 </div>
 </div>
 </div>

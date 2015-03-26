@@ -19,7 +19,16 @@
                     <div class="box_content_element">
                         
                           <div class="details_wrapper">
-                          <h4><%= s.name %> <i class="fa fa-arrow-circle-down details_close"></i></h4>
+                            <h4 <% if s.completed %> style="text-decoration: line-through"<%end %>> 
+                              <% if s.completed %>
+                              <%= link_to "<i class='fa fa-times red_icon'></i>".html_safe, complete_category_todo_step_path(@category, @todo, s) %>
+                              <% else %> 
+                              <%= link_to "<i class='fa fa-check-square-o green_icon'></i>".html_safe, complete_category_todo_step_path(@category, @todo, s) %>
+                              <% end %>
+                              <%= s.name %> <i class="fa fa-arrow-circle-down details_close"></i>
+                          
+                            
+                            </h4>
 
                           <div class="details_container auto_hide">
                             Write your Questions and Comments here!
@@ -31,6 +40,7 @@
                               
                             <% s.comments.each do |c| %>
                                 <div class="comment_element">
+                                  
     
                             <%= render partial: "comments/comments", locals: {comment: c, step: s, todo: @todo, category: @category} %>
                                 </div>
@@ -58,9 +68,9 @@
                     <%= link_to "All Categories", edit_category_todo_path(@category, @todo) %>
                   </div>
                   <div class="box_sidebar_element">
-                    <h5> info: something </h5>
-                    <h5> more: bananas </h5>
-                    <h5> phone: 51246887231 </h5>
+                    <h5> User: <%= @todo.user.name if @todo.user.present? %> </h5>
+                    <h5> Deadline: <%= @todo.deadline.strftime("%d %B, %Y") %> </h5>
+                    <h5> Priority: <i class="fa fa-circle" style="color: #<%= @todo.priority.color %>"></i> </h5>
                   </div>
                   <div class="box_sidebar_element">
                   <div class="details_wrapper">
