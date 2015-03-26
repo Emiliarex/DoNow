@@ -1,5 +1,10 @@
 class TodosController < ApplicationController
   
+  def index
+    @todos = Todo.all.order("title ASC")
+    
+  end
+  
   def new
     @category = Category.find(params[:category_id])
     @todo = Todo.new

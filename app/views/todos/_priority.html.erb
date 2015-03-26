@@ -1,5 +1,6 @@
 <div class="form-group">
-  <div class="col-md-3">
+  
+  <div class="col-md-4">
   
 <% if @todo.priority.present? %>
   <%= form_for [@category, @todo, @todo.priority] do |f| %>
@@ -13,9 +14,17 @@
   <% end %>
     <%= form_for [@category, @todo, Priority.new] do |f| %>
     <%= f.submit "Set Urgency", class: 'btn btn-info' %>
-    <% end %>
+    <% end %> 
   <% end %>
- 
+    </div>
+    
+  <div class="col-md-8">
+    <h5><strong> Priority Key:</strong></h5>
+    <h5>1 - <i class="fa fa-circle" style="color: #FA0505"></i></h5>
+    <h5>2 - <i class="fa fa-circle" style="color: #FF6F0F"></i></h5>
+    <h5>3 - <i class="fa fa-circle" style="color: #FAFA07"></i></h5>
+    <h5>4 - <i class="fa fa-circle" style="color: #8CD603"></i></h5>
+    <h5>5 - <i class="fa fa-circle" style="color: #0EC704"></i></h5>
+    </div>
   
-</div>
 </div>

@@ -47,7 +47,7 @@ hr {
 }
 
 a {
-  color: #9976F5;
+  color: #FF5EC4;
 }
 .container-fluid{
   padding-left:0px ;
@@ -333,13 +333,16 @@ a {
 
 
 
-.category_title_link{
+.category_title_link, .todo_title_link{
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 20px;
   font-family: Architects Daughter;
   font-weight: bold;
  
 }
+
+
+
 
 .edit_button_category{
  font-size: 15px;
@@ -428,16 +431,6 @@ a {
   box-shadow: -8px 8px 10px rgba(0,0,0,0.7);
 }
 
-.outer {
-  display:block;
-  margin: 150px auto ;
-  max-width: 400px;
-  padding: 20px 0;
-  border: 1px solid #888;
-  border-width: 1px 0;
-  position: relative;
-  background: #fff;
-}
 
 .box_header{
   padding: 8px 0px 8px 32px;
@@ -469,6 +462,9 @@ a {
   background-color: rgba(255,255,255,0.5);
   border:1px solid rgba(0,0,0,0.3);
   border-radius:12px;
+  float: none !important;
+  overflow:auto;
+  
 }
 
 .box_sidebar{
@@ -495,7 +491,7 @@ a {
 
 .comment_element{
    background-color: rgba(184,156,227,0.4);
-  border-radius: 5px;
+  border-radius: 1px;
   
 }
 /*-----------------------------------ICON STYLES-------------------------*/
@@ -505,4 +501,26 @@ a {
 
 .green_icon{
   color: green;
+}
+
+.avatar{
+  border-radius: 100px;
+  border: 4px solid rgba(122,226,255,1);
+  margin:4px;
+  
+
+  &:hover {
+    cursor: pointer; 
+    animation: bounceOut .4s linear;
+    -webkit-animation: bounceOut .4s linear;
+  }
+}
+		
+
+@-webkit-keyframes bounceOut {
+      0%{border: 4px solid rgba(122,226,255,1);margin:4px;}
+      25%{border: 1px solid rgba(122,226,255,1);margin:7px;}
+      50%{border: 7px solid rgba(122,226,255,1);margin:1px;}
+      75%{border: 4px solid rgba(122,226,255,1);margin:4px;}
+      100%{border: 5px solid rgba(122,226,255,1);margin:3px;}
 }

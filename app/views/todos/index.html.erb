@@ -1,0 +1,17 @@
+<div class="box_wrapper">
+  <div class="col-md-7 box_content">
+<h1>~To-Dos~</h1> 
+  
+<div class="col-md-12">
+    <div class="form-group">
+      <% @todos.each do |t| %>
+      <div class="col-md-12 box_content_element">
+      <%= link_to  t.title, category_todo_path(t.category,t), class: 'todo_title_link' %>
+        <strong style="margin-left: 15px;"><i class="fa fa-clock-o"></i></strong>      <%= t.deadline.strftime("%d %B %Y") if t.deadline.present? %>
+        <span class="pull-right"><i class="fa fa-folder-open"></i> <%= t.category.title %></span>
+      </div>
+<% end %>
+  </div>
+    </div>
+  </div>
+</div> 

@@ -24,20 +24,24 @@
         <hr>
         
         <li><%= link_to "<span><i class='fa fa-home'></i> Home</span>".html_safe, root_path %></li>
-        <li><%= link_to "<span><i class='fa fa-exclamation-triangle'></i> Urgent To-Dos</span>".html_safe, root_path %></li>
-        <li><%= link_to "<span><i class='fa fa-spinner''></i>To-Dos in Progress</span>".html_safe, root_path %><li>
+        <li><%= link_to "<span><i class='fa fa-list-ul'></i> Your To-Dos</span>".html_safe, root_path %><li>
+        <li><%= link_to "<span><i class='fa fa-exclamation-triangle'></i> Your Urgent To-Dos</span>".html_safe, root_path %></li>
+        <li><%= link_to "<span><i class='fa fa-check'></i>All To-Dos</span>".html_safe, todos_path %></li>
+       
+      
+       
         
         <br/>
         
           <% if current_user %>
-          <%= image_tag(current_user.avatar.tiny.url) if current_user.avatar? %>
-        <p class="greeting_text">Why Hello There, <strong><%=link_to (current_user.name || current_user.email), current_user, class: "no_bar name_text " %></strong></p>
+          <li><%= image_tag(current_user.avatar.url, class: "avatar") if current_user.avatar? %></li>
+        <li><p class="greeting_text">Why Hello There, <strong><%=link_to (current_user.name || current_user.email), current_user, class: "no_bar name_text " %></strong></p></li>
         <%= link_to edit_user_registration_path, class: 'no_bar user_button' do %>
-          <i class='fa fa-user'></i> My Account
+        <li><i class='fa fa-user'></i> My Account</li>
         <% end %>
-        
+        </br>
         <%= link_to destroy_user_session_path, method: :delete, class: 'no_bar user_button' do %>
-            <i class='fa fa-sign-out'></i> Sign Out
+        <li><i class='fa fa-sign-out'></i> Sign Out</li>
           <% end %>
         <% else %>
         <%= link_to "Sign In", new_user_session_path, class: "no_bar" %> 

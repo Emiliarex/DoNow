@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  include UsersHelper
+  
   def index
   end
 
@@ -33,6 +36,9 @@ class UsersController < ApplicationController
 
   def show
   end
+    
+  
+  private
   
   def user_params
     params.require(:user).permit(:name, :avatar)

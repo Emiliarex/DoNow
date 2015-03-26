@@ -1,30 +1,37 @@
-<div class="box_wrapper">
+<div class="col-md-12 box_wrapper">
+  
   <div class="box_header">
-<h1>Personalize your Account!</h1>
+<h1>Personalize and Edit your Account!</h1>
   </div>
-
+  
+<div class="col-md-11 box_content_element">
+  
  <%= form_for(current_user) do |f| %>
       <div class="form-group">
         <div class="col-md-3">
         <%= f.label :name %>
         <%= f.text_field :name, class: 'form-control', placeholder: "Enter name", autofocus: true %>
       </div>
-</div>
+      </div>
        <% if current_user.avatar? %>
          <div class="form-group">
            <p>Current avatar</p>
-           <%= image_tag( current_user.avatar.profile.url ) %>
+           <%= image_tag(current_user.avatar.profile.url) %>
          </div>
        <% end %>
        <div class="form-group">
-         <div class="col-md-13">
+         
          <%= f.label :avatar %>
          <%= f.file_field :avatar %>
          <%= f.hidden_field :avatar_cache %>
        </div>
-</div>
+
       <div class="form-group box_header">
         <%= f.submit "Update", class: 'btn btn-success' %>
       </div>
     <% end %>
+  
+  <div class="col-md-7">
+  <%= render partial:'devise/registrations/edit'%>
+  </div>
 </div>

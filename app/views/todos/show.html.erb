@@ -64,9 +64,7 @@
                   <div class="box_sidebar_element">
                 <%= link_to "Edit To-Do", edit_category_todo_path(@category, @todo), class: 'btn btn-warning btn-lg edit_button_todo' %>
                   </div>
-                  <div class="box_sidebar_element">
-                    <%= link_to "All Categories", edit_category_todo_path(@category, @todo) %>
-                  </div>
+                  
                   <div class="box_sidebar_element">
                     <h5> User: <%= @todo.user.name if @todo.user.present? %> </h5>
                     <h5> Deadline: <%= @todo.deadline.strftime("%d %B, %Y") %> </h5>

@@ -17,7 +17,7 @@ class Todo < ActiveRecord::Base
       elsif self.priority.urgency == 3
         self.priority.update_attribute(:color, "FAFA07")
       elsif self.priority.urgency == 4
-        self.priority.update_attribute(:color, "BDFA07")
+        self.priority.update_attribute(:color, "8CD603")
       elsif self.priority.urgency == 5
         self.priority.update_attribute(:color, "0EC704")
       end

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   get 'priorities/new'
+  get "todos" => "todos#index"
 
+  get 'users/edit', to: redirect('users/show')
   
-
 
  resources :categories do
     resources :todos, except: [:index] do
@@ -16,6 +17,8 @@ Rails.application.routes.draw do
       end
     end
   end
+  
+  
   
   
   devise_for :users
